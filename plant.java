@@ -10,8 +10,14 @@
  */
 public class plant {
     
+    int x, y;
+    species s;
     
-    
-    
+    public plant(int x, int y, species s)
+    {
+        this.x = x;
+        this.y = y;
+        this.s = s;
+    }
     
 }

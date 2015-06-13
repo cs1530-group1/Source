@@ -10,9 +10,21 @@
  */
 public class species {
  
-    public species()
+    String type;
+    String sun;
+    int prune;
+    int water;
+    int fertilize;
+    
+    public species(String type, String sun, int prune, int water, int fertilize)
     {
-        
+        this.type = type;
+        this.sun = sun;
+        this.prune = prune;
+        this.water = water;
+        this.fertilize = fertilize;
     }
+    
+    
     
 }
