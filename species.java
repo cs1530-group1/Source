@@ -8,7 +8,7 @@
  *
  * @author Muneeb
  */
-public class species {
+public class Species {
  
     String type;
     String sun;
@@ -16,7 +16,7 @@ public class species {
     int water;
     int fertilize;
     
-    public species(String type, String sun, int prune, int water, int fertilize)
+    public Species(String type, String sun, int prune, int water, int fertilize)
     {
         this.type = type;
         this.sun = sun;

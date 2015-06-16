@@ -5,7 +5,7 @@
 import java.util.*;
 import java.io.*;
 
-public class garden {
+public class Garden {
 
     //Add plants is done
     //initialize species is done
@@ -16,10 +16,10 @@ public class garden {
     {   
         boolean success = false;
         
-        ArrayList<species> speciesList = initializeSpecies();
-        ArrayList<plant> plantList = new ArrayList<>(200);
+        ArrayList<Species> speciesList = InitializeSpecies();
+        ArrayList<Plant> plantList = new ArrayList<>(200);
         
-        initializePlants(plantList); //get all possible plants from the garden
+        InitializePlants(plantList); //get all possible plants from the garden
         
         success = addPlant(plantList, speciesList);
         
@@ -27,11 +27,11 @@ public class garden {
     }
     
     //initialize the speciesList
-    public static ArrayList<species> initializeSpecies()
+    public static ArrayList<Species> InitializeSpecies()
     {
         String  speciesData = "speciesdata.txt";
         BufferedReader infile;
-        ArrayList<species> speciesList = null;
+        ArrayList<Species> speciesList = null;
         
         //try to read in data from speciesdata.txt
         try
@@ -52,7 +52,7 @@ public class garden {
                 int water = Integer.parseInt(parsed[3]);
                 int fertilize = Integer.parseInt(parsed[4]);
                 
-                speciesList.add(new species(type, sun, prune, water, fertilize));
+                speciesList.add(new Species(type, sun, prune, water, fertilize));
             }
             
             infile.close();
@@ -71,7 +71,7 @@ public class garden {
     }    
     
     //initialize plants from plantdata.txt
-    public static boolean initializePlants(ArrayList<plant> plantList)
+    public static boolean InitializePlants(ArrayList<Plant> plantList)
     {
         String  plantData = "plantdata.txt";
         BufferedReader infile;
@@ -95,8 +95,8 @@ public class garden {
                 int water = Integer.parseInt(parsed[5]);
                 int fertilize = Integer.parseInt(parsed[6]);
                 
-                species newSpecies = new species(type, sun, prune, water, fertilize);
-                plant newPlant = new plant(x, y, newSpecies);
+                Species newSpecies = new Species(type, sun, prune, water, fertilize);
+                Plant newPlant = new Plant(x, y, newSpecies);
                 
                 plantList.add(newPlant);
             }
@@ -116,7 +116,7 @@ public class garden {
     }
     
     //add plant to garden and to plantdata.txt
-    public static boolean addPlant(ArrayList<plant> plantList, ArrayList<species> speciesList)
+    public static boolean addPlant(ArrayList<Plant> plantList, ArrayList<Species> speciesList)
     {
         Scanner reader = new Scanner(System.in);
         String species;
@@ -136,7 +136,7 @@ public class garden {
         
         boolean found = false;
         
-        for(species s: speciesList)
+        for(Species s: speciesList)
         {
             if (s.type.equalsIgnoreCase(species))
             {
@@ -198,8 +198,8 @@ public class garden {
                     System.out.println("Cant read from plantdata.txt. Please try again");
                 }
 
-                species newSpecies = new species(type, sun, prune, water, fertilize);
-                plant newPlant = new plant(x,y,newSpecies);
+                Species newSpecies = new Species(type, sun, prune, water, fertilize);
+                Plant newPlant = new Plant(x,y,newSpecies);
                 plantList.add(newPlant);
                 found = true;
             }
@@ -223,21 +223,27 @@ public class garden {
     }
     
     //add new species
-    public static boolean addSpecies()
+    public static boolean AddSpecies()
     {
         return true;
     }
     
     //remove or modify existing species
-    public static boolean editSpecies()
+    public static boolean EditSpecies()
     {
         return true;
     }
     
     //remove or modify existing plant
-    public static boolean editPlant()
+    public static boolean EditPlant()
     {
         return true;
+    }
+    
+    public static String GardenToString()
+    {
+        
+        return null;
     }
     
 }

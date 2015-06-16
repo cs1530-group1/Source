@@ -8,12 +8,12 @@
  *
  * @author Muneeb
  */
-public class plant {
+public class Plant {
     
     int x, y;
-    species s;
+    Species s;
     
-    public plant(int x, int y, species s)
+    public Plant(int x, int y, Species s)
     {
         this.x = x;
         this.y = y;
