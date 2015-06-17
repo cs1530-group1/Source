@@ -34,5 +34,15 @@ public interface GardenInterface {
     
     boolean RemoveSpecies(Species s);
     boolean RemoveSpecies(String species); //just need name of species (ex:tomato)
+
+
+    
+    String[] listSpecies(); //returns an array of the names of all species or null if no species have been created yet
+    String getSpeciesInfo(String species); //returns a string of a single species info in the format tomato:sunValue:pruneValue:waterValue:gertilizeValue or null if species does not exist
+
+    boolean hasPlant(Plant p); //return true if Plant p exists in the garden
+    boolean hasPlant(int x, int y); //returns true if a plant (any plant) is located at x,y
+
+    
             
 }
